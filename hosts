@@ -1,0 +1,11 @@
+[masters]
+master ansible_host=34.240.194.188 ansible_user=ubuntu
+
+[workers]
+worker1 ansible_host=3.249.194.210 ansible_user=ubuntu
+worker2 ansible_host=34.241.124.8 ansible_user=ubuntu
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_private_key_file=/home/proszows/Workshop/atsi/atsi.pem
+

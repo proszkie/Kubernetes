@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: network
+  labels:
+    app: mme
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mme
+  template:
+    metadata:
+      labels:
+        app: mme
+    spec:
+      hostNetwork: true
+      containers:
+      - name: mme
+        image: powder13/nginx
+        ports:
+        - containerPort: 80
+      - name: upf
+        image: jenkins/jenkins
+        ports:
+         - containerPort: 8080

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mme
+  labels:
+    app: network
+spec:
+  restartPolicy: OnFailure
+  hostNetwork: true
+  containers:
+    - name: mme
+      image: powder13/nginx
+      ports:
+        - containerPort: 80
